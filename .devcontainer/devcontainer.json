@@ -2,7 +2,7 @@
   "name": "SQLite SQL Environment",
   "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
   "features": {
-    "sqlite": "latest"
+    "ghcr.io/devcontainers-contrib/features/sqlite:1": {}
   },
   "postCreateCommand": "echo 'Welcome to SQL Teaching Kit!'"
 }
