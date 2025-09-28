@@ -1,8 +1,27 @@
 {
-  "name": "SQLite SQL Environment",
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/sqlite:1": {}
+  "name": "SQL Learning Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "alexcvzz.vscode-sqlite",
+        "formulahendry.code-runner"
+      ],
+      "settings": {
+        "sqlite.sqlite3": "/usr/bin/sqlite3",
+        "files.associations": {
+          "*.db": "sqlite",
+          "*.sqlite": "sqlite",
+          "*.sqlite3": "sqlite"
+        },
+        "workbench.startupEditor": "readme",
+        "editor.fontSize": 14
+      }
+    }
   },
-  "postCreateCommand": "echo 'Welcome to SQL Teaching Kit!'"
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y sqlite3",
+  "forwardPorts": [],
+  "remoteUser": "codespace"
 }
